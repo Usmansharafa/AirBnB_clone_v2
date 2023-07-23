@@ -124,7 +124,7 @@ class HBNBCommand(cmd.Cmd):
                 key, value = param.split('=')
                 try:
                     attribute = HBNBCommand.verify_attribute(value)
-                except:
+                except Exception:
                     continue
                 if not attribute:
                     continue
@@ -344,6 +344,7 @@ class HBNBCommand(cmd.Cmd):
                     return float(attribute)
             except ValueError:
                 return None
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
